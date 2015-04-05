@@ -23,7 +23,7 @@
     
     NSString * stringPrices = @"123,1020,500";
     NSString * stringValues = @"Тетрадь,Телевизор,Утюг";
-    NSMutableArray * arrayM = [[NSMutableArray alloc]init];
+    self.arrayM = [[NSMutableArray alloc]init];
     
     
     self.arrayPrices = [stringPrices componentsSeparatedByString:@","];
@@ -36,11 +36,11 @@
                                [self.arrayValues objectAtIndex:i], @"values", nil];
         
         
-        [arrayM addObject:dict];
+        [self.arrayM addObject:dict];
         
     }
 
-    NSLog(@"%@", arrayM);
+    NSLog(@"%@", self.arrayM);
     
     
 }
@@ -49,7 +49,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section; {
     
-    return self.arrayPrices.count;
+    return self.arrayM.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
